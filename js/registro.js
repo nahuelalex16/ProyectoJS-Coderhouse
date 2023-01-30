@@ -9,11 +9,14 @@ let usuarios;
 
 
 //Verificacion de usuarios en Local Storage
-if (localStorage.getItem("usuarios")) {
-    usuarios = JSON.parse(localStorage.getItem("usuarios"))
-} else {
-    usuarios = [];
-}
+
+const checkUsuarios = localStorage.getItem("usuarios") ? true : false,
+    cargarUsuarios = () =>{
+        usuarios = JSON.parse(localStorage.getItem("usuarios"))
+    };
+
+checkUsuarios ?  cargarUsuarios() : usuarios = [];
+
 
 //Crear Usuario
 

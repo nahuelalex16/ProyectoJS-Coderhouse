@@ -8,14 +8,10 @@ const username = document.querySelector("#usernameLog"),
 
 function iniciarSesion(usuarios){
     let validacion = usuarios.find(usuario =>{
-        return usuario.username == username.value && usuario.contraseña == password.value;
+        return usuario.username == username.value && usuario.contraseña == password.value ? true : false;
     });
 
-    if (validacion){
-        window.location.href = "/index.html";
-    } else{
-        document.querySelector("#alerta").innerText = "Error al iniciar sesión. Intentelo de nuevo.";
-    }
+    validacion ?  window.location.href = "/index.html" : alerta.innerText = "Error al iniciar sesión. Intentelo de nuevo.";
 }
 
 function recuperarDatos(){
